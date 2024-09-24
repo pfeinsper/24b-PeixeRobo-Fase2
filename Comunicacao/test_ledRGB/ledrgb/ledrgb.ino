@@ -43,25 +43,15 @@ void loop() {
           i++;
       }
       Serial.print("Pacote recebido: ");
-      for (int j = 0; j < packetSize; j++) {
-          Serial.print(message[j]);
-          analogWrite(pinList[j], message[j]);
-          Serial.print(" ");
+  for (int j = 0; j < 3; j++) {
+      Serial.print(message[j]);
+      analogWrite(pinList[j], message[j]);
+      Serial.print(" ");
       }
       Serial.println();
   }
 }
 
-/*
-
-void loop() {
-
-
-  // Ajusta as cores do LED RGB
-  analogWrite(pwmPinR, redValue);
-  analogWrite(pwmPinG, greenValue);
-  analogWrite(pwmPinB, blueValue);
-}
 
 int getInput(String colorName) {
   Serial.print("Digite o valor para ");
@@ -85,14 +75,4 @@ int getInput(String colorName) {
 
   return value;
 }
-/////////
-/*
-void setup() {
-  Serial.begin(115200); // Inicializa a comunicação serial
-  while (!Serial);      // Aguarda a inicialização da porta serial
 
-
-}
-
-
-*/

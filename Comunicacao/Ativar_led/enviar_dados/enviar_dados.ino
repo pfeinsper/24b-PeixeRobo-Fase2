@@ -1,9 +1,10 @@
-#include <SPI.h>
+
 #include <LoRa.h>
 
 const int csPin = 18;      // Pino CS (chip select) para LoRa
 const int resetPin = 23;   // Pino de reset para LoRa
 const int irqPin = 26;     // Pino de IRQ (DIO0) para LoRa
+
 
 void setup() {
   Serial.begin(115200); // Inicializa a comunicação serial
@@ -32,31 +33,23 @@ void setup() {
 }
 
 void loop() {
-
-    Serial.println("Enviando pacote...");
-    int redValue = getInput("vermelho");
-    int greenValue = getInput("verde");
-    int blueValue = getInput("azul");
-
   // Inicia a mensagem LoRa
-    // Cria um buffer para armazenar os valores de cor
-    byte colorBuffer[3];
-    colorBuffer[0] = redValue;
-    colorBuffer[1] = greenValue;
-    colorBuffer[2] = blueValue;
+// Cria um buffer para armazenar os valores de cor
+    int16_t dataBuffer[1];
+    dataBuffer[0] = getInput();
 
     // Envia os valores de cor via LoRa
     LoRa.beginPacket();
-    LoRa.write(colorBuffer, sizeof(colorBuffer));
+    LoRa.write((uint8_t*)&dataBuffer, sizeof(dataBuffer));
     LoRa.endPacket();
 
-  delay(5000); // Aguarda 5 segundos antes de enviar o próximo pacote
+  delay(1000);
 }
 
-int getInput(String colorName) {
-  Serial.print("Digite o valor para ");
-  Serial.print(colorName);
-  Serial.print(": ");
+
+
+int getInput() {
+  Serial.println("Digite o valor entre 1600 e -1600 ");
   
   while (Serial.available() == 0) {
     // Espera até que o usuário digite algo
@@ -67,9 +60,8 @@ int getInput(String colorName) {
   int value = inputString.toInt();
 
   // Garantir que o valor esteja no intervalo correto (0-255)
-  value = constrain(value, 0, 255);
+  value = constrain(value, -1600, 1600);
   Serial.println(value);
-  Serial.print(colorName);
   Serial.print(" ajustado para: ");
   Serial.println(value);
 

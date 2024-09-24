@@ -1,4 +1,4 @@
-#include <SPI.h>
+//#include <SPI.h>
 #include <LoRa.h>
 
 const int csPin = 18;      // Pino CS (chip select) para LoRa
@@ -24,15 +24,12 @@ void setup() {
 }
 
 void loop() {
-  // Tenta receber um pacote
-  int packetSize = LoRa.parsePacket();
-  if (packetSize) {
-    // Lê o pacote recebido
-    Serial.print("Pacote recebido: ");
-    while (LoRa.available()) {
-      String message = LoRa.readString();
-      Serial.print(message);
-    }
-    Serial.println();
-  }
+  Serial.println("Enviando pacote...");
+
+  // Inicia a mensagem LoRa
+  LoRa.beginPacket();
+  LoRa.print("Olá, receptor!");
+  LoRa.endPacket();
+
+  delay(5000); // Aguarda 5 segundos antes de enviar o próximo pacote
 }

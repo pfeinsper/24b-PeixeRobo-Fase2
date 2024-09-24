@@ -1,16 +1,19 @@
-// Módulo ESP32 recebendo dados do Arduino via UART2
-HardwareSerial SerialESP32(2); // Usando UART2 do ESP32
+#include <HardwareSerial.h>
+
+HardwareSerial Serial2(2); // Definir UART2
 
 void setup() {
-  Serial.begin(115200); // Comunicação serial com o PC para monitoramento
-  SerialESP32.begin(9600, SERIAL_8N1, 25, 27); // Configura UART2: RX=GPIO25, TX=GPIO27
-  Serial.println("ESP32 Iniciado e aguardando dados do Arduino...");
+  Serial.begin(115200); // Inicializa o console
+  Serial2.begin(9600, SERIAL_8N1, 15, 14); // RX2=15, TX2=14 (UART2)
 }
 
 void loop() {
-  if (SerialESP32.available()) {
-    String mensagem = SerialESP32.readStringUntil('\n'); // Lê a mensagem até a quebra de linha
-    Serial.print("Mensagem recebida: ");
-    Serial.println(mensagem);
+  if (Serial2.available()) {
+    char incomingData = Serial2.read(); // Ler dados recebidos pela UART2
+    Serial.print("Recebido do Arduino: ");
+    Serial.println(incomingData); // Exibir no console
   }
+
+  Serial2.println("Dados da ESP32 para Arduino via UART2"); // Enviar dados pela UART2
+  delay(1000);
 }
