@@ -8,15 +8,15 @@ const int irqPin = 26;     // Pino de IRQ (DIO0) para LoRa
 const int ARRAY_SIZE = 1;
 int16_t receivedArray[ARRAY_SIZE];  // Array para armazenar os números recebidos
 
-union{
-  struct{
-    int16_t var1;
-    int8_t var2;
-    bool var3;
-  } data;
-  uint8_t raw[4]; 
-}
-memcpy
+// union{
+//   struct{
+//     int16_t var1;
+//     int8_t var2;
+//     bool var3;
+//   } data;
+//   uint8_t raw[4]; 
+// }
+// memcpy
 
 void setup() {
   Serial.begin(115200); // Inicializa o console

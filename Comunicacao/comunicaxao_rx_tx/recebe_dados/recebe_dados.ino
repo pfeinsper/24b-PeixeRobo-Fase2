@@ -1,6 +1,6 @@
 #include <HardwareSerial.h>
 
-HardwareSerial Serial2(2); // Definir UART2
+//HardwareSerial Serial2(2); // Definir UART2
 
 void setup() {
   Serial.begin(115200); // Inicializa o console
