@@ -49,7 +49,7 @@ void loop() {
 
 
 int getInput() {
-  Serial.println("Digite o valor entre 1600 e -1600 ");
+  Serial.println("Digite o valor entre -5000 e 5000 ");
   
   while (Serial.available() == 0) {
     // Espera até que o usuário digite algo
@@ -60,7 +60,7 @@ int getInput() {
   int value = inputString.toInt();
 
   // Garantir que o valor esteja no intervalo correto (0-255)
-  value = constrain(value, -1600, 1600);
+  value = constrain(value, -4500, 4500);
   Serial.println(value);
   Serial.print(" ajustado para: ");
   Serial.println(value);

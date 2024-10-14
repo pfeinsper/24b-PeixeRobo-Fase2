@@ -13,12 +13,18 @@ def home():
 def submit():
     name = request.form.get('name')
     print(f"Nome recebido: {name}")
+    #limite name entre 4500 e -4500
+    if int(name) > 4500:
+        name = 4500
+    elif int(name) < -4500:
+        name = -4500
+
 
     # Envia os dados para o servidor Flask que gerencia a comunicação serial
     try:
         response = requests.post('http://127.0.0.1:5001/enviar_dados', json={'name': name})
         if response.status_code == 200:
-            return f'Dados enviados com sucesso! Nome: {name}'
+            return render_template('form.html')  
         else:
             return f'Erro ao enviar dados: {response.json()}'
     except requests.ConnectionError as e:

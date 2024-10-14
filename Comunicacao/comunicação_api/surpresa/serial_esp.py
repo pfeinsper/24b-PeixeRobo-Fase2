@@ -36,7 +36,7 @@ def enviar_dados():
         if name:
             # Envia o dado para o Arduino via Serial
             ser.write(f'{name}\n'.encode())
-            return jsonify({'mensagem': 'Dados enviados para o Arduino!'}), 200
+            return jsonify({'mensagem': 'Dados enviados para a ESP32!'}), 200
         else:
             return jsonify({'erro': 'Nome não fornecido!'}), 400
 
