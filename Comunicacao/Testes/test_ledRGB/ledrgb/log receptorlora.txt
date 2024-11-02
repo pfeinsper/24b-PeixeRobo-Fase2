@@ -1,0 +1,63 @@
+18:23:07.799 -> Foram recebidos: 310 pacotes59 
+18:23:09.796 -> Pacote recebido: 60
+18:23:09.796 -> Foram recebidos: 311 pacotes60 
+18:23:11.851 -> Pacote recebido: 61
+18:23:11.851 -> Foram recebidos: 312 pacotes61 
+18:23:13.847 -> Pacote recebido: 62
+18:23:13.847 -> Foram recebidos: 313 pacotes62 
+18:23:15.898 -> Pacote recebido: 63
+18:23:15.898 -> Foram recebidos: 314 pacotes63
+
+
+
+
+
+
+
+
+18:20:47.660 -> Pacote recebido: 246
+18:20:47.660 -> Foram recebidos: 242 pacotes246 
+18:20:49.646 -> Pacote recebido: 247
+18:20:49.646 -> Foram recebidos: 243 pacotes247 
+18:20:51.677 -> Pacote recebido: 248
+18:20:51.677 -> Foram recebidos: 244 pacotes248 
+18:20:53.740 -> Pacote recebido: 249
+18:20:53.740 -> Foram recebidos: 245 pacotes249 
+18:20:55.739 -> Pacote recebido: 250
+18:20:55.739 -> Foram recebidos: 246 pacotes250 
+18:20:57.803 -> Pacote recebido: 251
+18:20:57.803 -> Foram recebidos: 247 pacotes251 
+18:20:59.801 -> Pacote recebido: 252
+18:20:59.801 -> Foram recebidos: 248 pacotes252 
+18:21:01.859 -> Pacote recebido: 253
+18:21:01.859 -> Foram recebidos: 249 pacotes253 
+18:21:03.880 -> Pacote recebido: 254
+18:21:03.880 -> Foram recebidos: 250 pacotes254 
+
+
+
+
+
+
+
+
+
+18:16:54.072 -> Pacote recebido: 131
+18:16:54.072 -> Foram recebidos: 129 pacotes131 
+18:16:56.083 -> Pacote recebido: 132
+18:16:56.083 -> Foram recebidos: 130 pacotes132 
+18:16:58.141 -> Pacote recebido: 133
+18:16:58.141 -> Foram recebidos: 131 pacotes133 
+18:17:00.183 -> Pacote recebido: 134
+18:17:00.183 -> Foram recebidos: 132 pacotes134 
+18:17:02.174 -> Pacote recebido: 135
+18:17:02.174 -> Foram recebidos: 133 pacotes135 
+18:17:04.223 -> Pacote recebido: 136
+18:17:04.223 -> Foram recebidos: 134 pacotes136 
+18:17:06.267 -> Pacote recebido: 137
+18:17:06.267 -> Foram recebidos: 135 pacotes137 
+18:17:08.266 -> Pacote recebido: 138
+18:17:08.266 -> Foram recebidos: 136 pacotes138 
+18:17:10.297 -> Pacote recebido: 139
+18:17:10.297 -> Foram recebidos: 137 pacotes139 
+18:17:12.365 -> Pacote recebido: 140
