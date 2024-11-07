@@ -53,7 +53,7 @@ void loop() {
   delay(5000); // Aguarda 5 segundos antes de enviar o próximo pacote
 }
 
-int getInput(String colorName) {
+int getInput(String colorName) {  
   Serial.print("Digite o valor para ");
   Serial.print(colorName);
   Serial.print(": ");

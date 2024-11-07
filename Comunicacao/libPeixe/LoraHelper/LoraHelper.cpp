@@ -66,3 +66,27 @@ bool LoraHelper::lerPacote(Pacote &receivedData) {
     }
     return false;  // Nenhum pacote recebido
 }
+
+
+
+void LoraHelper::sinalizarFimMissao() {
+    LoRa.beginPacket();
+    LoRa.write(0xFF);  // Envia um byte de sinalização
+    LoRa.endPacket();
+
+    Serial.println("Sinal de fim de missão enviado via LoRa.");
+}
+
+void LoraHelper::receberFimMissao() {
+    int packetSize = LoRa.parsePacket();
+    if (packetSize > 0) {
+        uint8_t receivedByte = LoRa.read();
+        if (receivedByte == 0xFF) {
+            Serial.println("Recebido sinal de fim de missão via LoRa.");
+        } else {
+            Serial.println("Byte inválido recebido.");
+        }
+        return true;
+    }
+    return false;  // Nenhum pacote recebido
+}
