@@ -15,10 +15,9 @@
 
 LoraHelper lora(csPin, resetPin, irqPin, freq);
 // Na esp32 os outros pinos de comunicação serial são 15 e 14
-ComunicacaoUart uart(Serial2, 9600, SERIAL_8N1, 15, 14);
+// ComunicacaoUart uart(Serial2, 9600, SERIAL_8N1, 15, 14);
 void setup() {
     Serial.begin(115200);
-//    Serial2.begin(9600, SERIAL_8N1, 15, 14); // RX2=15, TX2=14 (UART2)
 
     while (!Serial);
     if (lora.iniciarLoRa()) {
@@ -33,8 +32,8 @@ void loop() {
   
   if(lora.lerPacote(pacote)){
 
-
-    uart.enviarMissao(pacote.missao);
+    lora.enviaConfirmacao(true);
+    
     
 
   };
